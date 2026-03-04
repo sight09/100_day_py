@@ -517,26 +517,20 @@ word_list = ["ardvark", "baboon", "camel"]
 rn_word = random.choice(word_list)
 print(rn_word)
 
-gusse = input("gusse the letter ").lower()
+
 
 
 display = []
-
-
-
-for word in rn_word:
-    display.append("_")
-    
-    if gusse == word:
-        display.append(gusse)
-    
-        
-        
+for n in rn_word:
+    display+= "_"
 print(display)
-    # print(word)
-    # if word == gusse:
-    #     print("ur right")
-    # else:
-    #     print("WRONG")
 
+gusse = input("gusse the letter ").lower()
+
+if gusse in rn_word:
+    for position in range(len(rn_word)):
+        letter = rn_word[position]
+        if letter == gusse:
+            display[position] = letter
+print(display)
 
