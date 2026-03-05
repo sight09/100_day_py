@@ -512,8 +512,65 @@
 #--------HANGMAN GAME ------------
 
 import random
-word_list = ["ardvark", "baboon", "camel"]
 
+        
+HANGMANPICS = [r'''
+  +---+
+  |   |
+      |
+      |
+      |
+      |
+=========''', r'''
+  +---+
+  |   |
+  O   |
+      |
+      |
+      |
+=========''', r'''
+  +---+
+  |   |
+  O   |
+  |   |
+      |
+      |
+=========''', r'''
+  +---+
+  |   |
+  O   |
+ /|   |
+      |
+      |
+=========''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+      |
+      |
+=========''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ /    |
+      |
+=========''', r'''
+  +---+
+  |   |
+  O   |
+ /|\  |
+ / \  |
+      |
+=========''']
+
+
+
+
+
+word_list = ["ardvark", "baboon", "camel"]
+lives = 6
 rn_word = random.choice(word_list)
 print(rn_word)
 
@@ -525,12 +582,34 @@ for n in rn_word:
     display+= "_"
 print(display)
 
-gusse = input("gusse the letter ").lower()
 
-if gusse in rn_word:
-    for position in range(len(rn_word)):
-        letter = rn_word[position]
-        if letter == gusse:
-            display[position] = letter
-print(display)
+end_of_game = False
 
+while not end_of_game:
+    gusse = input("gusse a letter ").lower()
+
+    if gusse in rn_word:
+        for position in range(len(rn_word)):
+            letter = rn_word[position]
+            if letter == gusse:
+                display[position] = letter
+                
+if gusse not in rn_word:
+    lives += 1
+    if lives == 6:
+        end_of_game = True
+        print("You lose.")
+    if "_" not in display:
+        end_of_game = True
+        print("You win")
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
