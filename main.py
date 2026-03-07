@@ -949,10 +949,10 @@ def divide(n1, n2):
 
 
 operations = {
-    "*" : "multiply",
-    "/" : "divide",
-    "+" : "add",
-    "-" : "subtract"
+    "*" : multiply,
+    "/" : divide,
+    "+" : add,
+    "-" : subtract
     
 }
 
@@ -975,6 +975,6 @@ print(f"{num1} {op_sign} {num2} = {first_answer}")
 op_sign = input("Pick another operation: ")
 num3 = int(input("what's the next number "))
 calculation_function = operations[op_sign]
-second_answer = calculation_function(calculation_function(num1, num2),num3)
+second_answer = calculation_function(calculation_function(num1, num2), num3)
 
-print(f"{first_answer} {op_sign} {num3}")
+print(f"{first_answer} {op_sign} {num3} = {second_answer}")
