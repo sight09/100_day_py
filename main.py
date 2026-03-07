@@ -509,99 +509,118 @@
 
 
 
-#--------HANGMAN GAME ------------
+# #--------HANGMAN GAME ------------
 
-import random
+# import random
 
         
-HANGMANPICS = [r'''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========''', r'''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''', r'''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========''', r'''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', r'''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========''', r'''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========''', r'''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========''']
+# HANGMANPICS = [r'''
+#   +---+
+#   |   |
+#       |
+#       |
+#       |
+#       |
+# =========''', r'''
+#   +---+
+#   |   |
+#   O   |
+#       |
+#       |
+#       |
+# =========''', r'''
+#   +---+
+#   |   |
+#   O   |
+#   |   |
+#       |
+#       |
+# =========''', r'''
+#   +---+
+#   |   |
+#   O   |
+#  /|   |
+#       |
+#       |
+# =========''', r'''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#       |
+#       |
+# =========''', r'''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#  /    |
+#       |
+# =========''', r'''
+#   +---+
+#   |   |
+#   O   |
+#  /|\  |
+#  / \  |
+#       |
+# =========''']
 
 
 
 
-
-word_list = ["ardvark", "baboon", "camel"]
-lives = 6
-rn_word = random.choice(word_list)
-print(rn_word)
-
+# end_of_game = False
+# word_list = ["ardvark", "baboon", "camel"]
+# rn_word = random.choice(word_list)
+# word_length = len(rn_word) 
 
 
+# lives = 0
 
-display = []
-for n in rn_word:
-    display+= "_"
-print(display)
+# print(rn_word)
+
+# display = []
+# for _ in range(word_length):
+#     display+= "_"
 
 
-end_of_game = False
 
-while not end_of_game:
-    gusse = input("gusse a letter ").lower()
+# while not end_of_game:
+#     gusse = input("gusse a letter ").lower()
+    
+    
+#     if gusse in display:
+#         print (f"You have already gussed {gusse}")
+        
+    
+    
+#     for position in range(len(rn_word)):
+#         letter = rn_word[position]
+#         if letter == gusse:
+#             display[position] = letter               
 
-    if gusse in rn_word:
-        for position in range(len(rn_word)):
-            letter = rn_word[position]
-            if letter == gusse:
-                display[position] = letter
+
                 
-if gusse not in rn_word:
-    lives += 1
-    if lives == 6:
-        end_of_game = True
-        print("You lose.")
-    if "_" not in display:
-        end_of_game = True
-        print("You win")
+                
+                                
+#     if gusse not in rn_word:
+#         print(f"You guessed {gusse},that's not in the word.You lose a life.")
+#         lives += 1
+#         if lives == 6:
+#             end_of_game = True
+#             print("You lose.")
+        
+#     print(f"{' '.join(display)}")
+
+        
+        
+#     if "_" not in display:
+#         end_of_game = True
+#         print("You win")
+        
+    
+    
+    
+#     print(HANGMANPICS[lives])    
         
         
         
@@ -611,5 +630,351 @@ if gusse not in rn_word:
         
         
         
+# def greet():
+#     print("hellow")
+#     print("welcome to my consule")
+#     print("thanks")
+
+
+# greet()  
+
+
+  
+
+## with input
+
+# def greet_with_name(name):
+#     print(f"hello {name}")
+#     print(f"how do you do {name}")
+    
+
+# greet_with_name("aman")
+
+
+
+# def greet_with (name,location):
+#     print(f"hello {name}")
+#     print(f"What is it like in {location}")
+    
+    
+# greet_with("aman","agaro")
+
+
+# import math
+
+
+# def paint_calc(hight , width , cover):
+#     area = (hight* width)
+#     num_of_cans = math.ceil (area / cover)
+#     print(f"You will need {num_of_cans} cans of paint")
+    
+    
+
+
+# test_h = int (input("Hight of wall: "))
+# test_w = int (input("Width of the wall: "))
+# coverage = 5
+
+    
+# paint_calc(hight=test_h, width=test_w, cover=coverage)
+
+
+
+# #----------prime checker-------
+
+# def prime_checker(number):
+#     is_prime = True
+#     for i in range(2, number):
+#         if number % i == 0 :
+#             is_prime = False
+        
+#     if is_prime:
+#         print("It's a prime number. ")
+#     else:
+#         print("It's is not a prime number. ")
+# n= int(input("Check this number "))
+# prime_checker(number = n)
+
+
+
+# ##-----code encoder and decoder------
+
+# alphabet = ['a', "b", "c", "d", "e", "f", "g",'h',"i", "j", "k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z", 'a', "b", "c", "d", "e", "f", "g",'h',"i", "j", "k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+
+
+
+# ##--------compact version of encode/decode-----------
+
+# def ceaser(start_text, shift_amount, cipher_diraction):
+#     end_text = ""
+#     if cipher_diraction == "decode" :
+#         shift_amount *= -1
+#     for char in start_text:
+#         if char in alphabet:
+#             position = alphabet.index(char)
+#             new_position = position + shift_amount
+#             end_text += alphabet[new_position]
+#         else:
+#             end_text += char
+#     print(f"The {cipher_diraction}d text is {end_text} ")    
+        
+
+
+
+
+
+
+
+## -------simpler version of encode/decode----------
+
+# def encrypt (plaine_text, shift_amount ) :
+#     cipher_text = ""
+#     for letter in plaine_text :
+#         position = alphabet.index(letter)
+#         new_position = position + shift_amount
+#         new_letter = alphabet[new_position]
+#         cipher_text += new_letter
+#     print(f"The encoded text is {cipher_text} ")
+        
+# def decrypt (plaine_text,shift_amount ) :
+#     cipher_text =""
+#     for letter in plaine_text :
+#         position = alphabet.index( letter)
+#         new_position = position - shift_amount
+#         new_letter = alphabet[new_position]
+#         cipher_text+=new_letter
+#     print(f"The decoded text is {cipher_text} ")
+
+# if direction == "encode" :
+#     encrypt(plaine_text=text, shift_amount=shift)
+    
+# elif direction == "decode" :
+#     decrypt(plaine_text=text, shift_amount=shift)
+# else:
+#     print("please text the corecet comand")  
+
+
+
+
+
+
+
+# should_continue = True
+# while should_continue:
+
+#     direction = input("Type 'encode', to encrypt, type 'decode' to decrypt:\n")
+#     text = input("Type your messeg: \n").lower()
+#     shift = int(input("Type the sift number:\n"))
+
+#     shift = shift % 26   
+
+
+#     ceaser(start_text=text, shift_amount=shift, cipher_diraction= direction)
+
+#     result = input("Type 'yes' if you want to again. Otherwise type 'no'.\n")
+#     if result == "no":
+#         should_continue = False
+#         print("Goodbye")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# #--------dictionary-----------
+
+# student_scores = {
+#     "Harry" : 81,
+#     "Ron" : 78,
+#     'Hermione' :99,
+#     'Draco' : 74,
+#     'Neville ' : 62,
+# }
+
+
+# student_grades = {}
+
+# for student in student_scores:
+#     score = student_scores[student]
+#     if score > 90:
+#         student_grades[student] = 'Outstanding'
+#     elif score > 80:
+#         student_grades[student] = "Exceeds Expectation"
+#     elif score > 70:
+#         student_grades[student] = "Acceptabel"
+#     else:
+#         student_grades[student] = "Fail"
+
+
+# print(student_grades)        
+
+
+
+
+
+
+
+
+# #-------dictionary in list--------
+
+
+
+# travel_log =[
+    
+#     {
+#         "country": "France",
+#         "visits": 12,
+#         "cities":["Paris","Lille", "Dijon"]
+        
+#     },
+    
+#     {
+#         "country": "Germany",
+#         "vitis" : 5,
+#         "cities" : ["Berline", "Hamburg", "Stuttgart"]
+        
+#     },
+            
+            
+            
+# ]
+
+
+
+
+# def add_new_country(country_visited, time_visited, cities_visited):
+#     new_country = {}
+#     new_country["country"] = country_visited
+#     new_country["visits"] = time_visited
+#     new_country["cities"] = cities_visited
+#     travel_log.append(new_country)
+
+
+
+# add_new_country('Russia', 2, ['Moscow', 'Saint Petersburg', ])
+
+# print(travel_log)
+
+
+
+
+
+
+#-----------bidder-----------
+
+
+
+# bids = {}
+# bidding_finished = False
+
+# def find_highest_bidder(bidding_record):
+#     highest_bid = 0
+#     for bidder in bidding_record:
+#         bid_amount = bidding_record[bidder]
+#         if bid_amount > highest_bid:
+#             highest_bid = bid_amount
+#             winner =bidder
+#     print(f"the winner is {winner} with a bid of $ {highest_bid}")
+
+# while not bidding_finished:
+#     name = input("Enter your name:  ")
+#     price = int(input("Enter your bid:  $ " ))
+#     bids[name] = price
+#     should_continue = input("Are there any bidders? Type 'yes' or 'no'. ")
+
+#     if should_continue == 'no':
+#         bidding_finished = True
+#         find_highest_bidder(bids)
+
+
+    # count = input("is there other bid yes or no")
+    # if count == 'no' :
+    #         go =False
+            
         
         
+        
+
+
+
+
+
+#-----title case----------
+
+
+# def format_name (f_name, l_name, g_name):
+#     """Take a first, last and grand pa  name and format it to return the title case version of the name."""
+#     if f_name == "" or l_name == "" or g_name == "":
+#         return "you didin't provide all valid inputs"
+    
+#     foramated_f_name = f_name.title()
+#     foramted_l_name = l_name.title()
+#     foramted_g_name = g_name.title()
+#     return f"{foramated_f_name} {foramted_l_name} {foramted_g_name}"
+    
+
+
+
+# print(format_name(input("What is your name? "), input("What is your father's name "), input("What about your grand pa? ")))
+
+
+
+
+
+
+
+#----------CALCULATOR-----------
+
+def add(n1, n2):
+    return n1 + n2
+
+def subtract(n1, n2):
+    return n1 - n2
+
+def multiply(n1, n2):
+    return n1 * n2
+
+def divide(n1, n2):
+    return n1 / n2
+
+
+
+operations = {
+    "*" : "multiply",
+    "/" : "divide",
+    "+" : "add",
+    "-" : "subtract"
+    
+}
+
+
+num1 = int(input("what's the 1st number?: "))
+
+for sign in operations:
+    print(sign)
+        
+op_sign = input("Pick an opration from the line above: ")
+num2 = int(input("what is the 2nd number?: "))
+
+calculation_function = operations[op_sign]
+first_answer = calculation_function(num1, num2)
+
+
+
+print(f"{num1} {op_sign} {num2} = {first_answer}")    
+
+op_sign = input("Pick another operation: ")
+num3 = int(input("what's the next number "))
+calculation_function = operations[op_sign]
+second_answer = calculation_function(calculation_function(num1, num2),num3)
+
+print(f"{first_answer} {op_sign} {num3}")
