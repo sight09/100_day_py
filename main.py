@@ -932,52 +932,132 @@
 
 
 
-#----------CALCULATOR-----------
+# #----------CALCULATOR-----------
 
-def add(n1, n2):
-    return n1 + n2
+# def add(n1, n2):
+#     return n1 + n2
 
-def subtract(n1, n2):
-    return n1 - n2
+# def subtract(n1, n2):
+#     return n1 - n2
 
-def multiply(n1, n2):
-    return n1 * n2
+# def multiply(n1, n2):
+#     return n1 * n2
 
-def divide(n1, n2):
-    return n1 / n2
+# def divide(n1, n2):
+#     return n1 / n2
 
 
 
-operations = {
-    "*" : multiply,
-    "/" : divide,
-    "+" : add,
-    "-" : subtract
+# operations = {
+#     "*" : multiply,
+#     "/" : divide,
+#     "+" : add,
+#     "-" : subtract
     
-}
+# }
 
-def calculator():
+# def calculator():
 
-    num1 = float(input("what's the 1st number?: "))
+#     num1 = float(input("what's the 1st number?: "))
 
-    for sign in operations:
-        print(sign)
+#     for sign in operations:
+#         print(sign)
         
-    should_continue = True
-    while should_continue:
+#     should_continue = True
+#     while should_continue:
                 
-        op_sign = input("Pick an opration from the line above: ")
-        num2 = float(input("what is the 2nd number?: "))
+#         op_sign = input("Pick an opration from the line above: ")
+#         num2 = float(input("what is the 2nd number?: "))
 
-        calculation_function = operations[op_sign]
-        answer = calculation_function(num1, num2)
+#         calculation_function = operations[op_sign]
+#         answer = calculation_function(num1, num2)
 
 
-        print(f"{num1} {op_sign} {num2} = {answer}")    
+#         print(f"{num1} {op_sign} {num2} = {answer}")    
 
-        if input(f"Type 'y' to continue calculating with {answer}: or type 'n' to start new calculation  ") == "y":
-            num1 = answer
+#         if input(f"Type 'y' to continue calculating with {answer}: or type 'n' to start new calculation  ") == "y":
+#             num1 = answer
+#         else:
+#             should_continue = False
+#             calculator()
+# calculator()
+
+
+
+
+
+
+
+#---------BLACK JACK-----------
+
+import random
+
+def deal_card():
+    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10]
+    card = random.choice(cards)
+    return card
+
+
+def calculate_score (cards):
+    if sum(cards) == 21 and len(cards) == 2:
+        return 0
+    
+    if 11 in cards and sum(cards) > 21:
+        cards.remove(11)
+        cards.append(1)
+    
+    return sum(cards) 
+
+def compare(user_score, computer_score):
+    if user_score == computer_score:
+        return "Draw :("
+    elif computer_score == 0:
+        return "Lose, opponent has Blackjack :() "
+    elif user_score == 0:
+        return "Win, with a Blackjack"
+    elif user_score > 21:
+        return "You went over. You lose"
+    elif computer_score < 21:
+        return "Opponen went over. you win :) "
+    elif user_score > computer_score:
+        return "You win"
+    else:
+        return "You lose"
+def play_game():
+    user_cards = []
+    computer_cards = []
+    is_game_over = False
+    for _ in range(2):
+        user_cards.append(deal_card())
+        computer_cards.append(deal_card() )
+
+
+
+    while not is_game_over:
+
+        user_score = calculate_score(user_cards)    
+        computer_score = calculate_score(computer_cards)
+
+        print(f"Your card: {user_cards}, current score: {user_score} ")
+        print(f"Computer's card: {user_cards[0]} ")
+            
+        if user_score == 0 or computer_score == 0 or user_score > 21:
+            is_game_over = True
         else:
-            should_continue = False
-            calculator()
-calculator()
+            user_should_deal = input("Type 'y' to get another card, type 'n' to pass: ")
+            if user_should_deal == 'y':
+                user_cards.append(deal_card())
+            else:
+                is_game_over = True    
+
+    while computer_score != 0 and computer_score <17:
+        computer_cards.append(deal_card())
+        computer_score = calculate_score(computer_cards)
+        
+    print(f" Your final hand: {user_cards}, final score: {user_score} ")
+    print(f" Computer's final hand: {computer_cards}, final score: {computer_score}")    
+    print(compare(user_score, computer_score))
+    
+    
+while input("Do you want to paly a game of Blackjack Type 'y' or 'n' ") == "y":
+    play_game()
