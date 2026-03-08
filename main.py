@@ -956,25 +956,28 @@ operations = {
     
 }
 
+def calculator():
 
-num1 = int(input("what's the 1st number?: "))
+    num1 = float(input("what's the 1st number?: "))
 
-for sign in operations:
-    print(sign)
+    for sign in operations:
+        print(sign)
         
-op_sign = input("Pick an opration from the line above: ")
-num2 = int(input("what is the 2nd number?: "))
+    should_continue = True
+    while should_continue:
+                
+        op_sign = input("Pick an opration from the line above: ")
+        num2 = float(input("what is the 2nd number?: "))
 
-calculation_function = operations[op_sign]
-first_answer = calculation_function(num1, num2)
+        calculation_function = operations[op_sign]
+        answer = calculation_function(num1, num2)
 
 
+        print(f"{num1} {op_sign} {num2} = {answer}")    
 
-print(f"{num1} {op_sign} {num2} = {first_answer}")    
-
-op_sign = input("Pick another operation: ")
-num3 = int(input("what's the next number "))
-calculation_function = operations[op_sign]
-second_answer = calculation_function(calculation_function(num1, num2), num3)
-
-print(f"{first_answer} {op_sign} {num3} = {second_answer}")
+        if input(f"Type 'y' to continue calculating with {answer}: or type 'n' to start new calculation  ") == "y":
+            num1 = answer
+        else:
+            should_continue = False
+            calculator()
+calculator()
