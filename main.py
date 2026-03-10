@@ -988,76 +988,137 @@
 
 
 
-#---------BLACK JACK-----------
+# #---------BLACK JACK-----------
 
-import random
+# import random
 
-def deal_card():
-    cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10]
-    card = random.choice(cards)
-    return card
+# def deal_card():
+#     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10]
+#     card = random.choice(cards)
+#     return card
 
 
-def calculate_score (cards):
-    if sum(cards) == 21 and len(cards) == 2:
-        return 0
+# def calculate_score (cards):
+#     if sum(cards) == 21 and len(cards) == 2:
+#         return 0
     
-    if 11 in cards and sum(cards) > 21:
-        cards.remove(11)
-        cards.append(1)
+#     if 11 in cards and sum(cards) > 21:
+#         cards.remove(11)
+#         cards.append(1)
     
-    return sum(cards) 
+#     return sum(cards) 
 
-def compare(user_score, computer_score):
-    if user_score == computer_score:
-        return "Draw :("
-    elif computer_score == 0:
-        return "Lose, opponent has Blackjack :() "
-    elif user_score == 0:
-        return "Win, with a Blackjack"
-    elif user_score > 21:
-        return "You went over. You lose"
-    elif computer_score < 21:
-        return "Opponen went over. you win :) "
-    elif user_score > computer_score:
-        return "You win"
-    else:
-        return "You lose"
-def play_game():
-    user_cards = []
-    computer_cards = []
-    is_game_over = False
-    for _ in range(2):
-        user_cards.append(deal_card())
-        computer_cards.append(deal_card() )
+# def compare(user_score, computer_score):
+#     if user_score == computer_score:
+#         return "Draw :("
+#     elif computer_score == 0:
+#         return "Lose, opponent has Blackjack :() "
+#     elif user_score == 0:
+#         return "Win, with a Blackjack"
+#     elif user_score > 21:
+#         return "You went over. You lose"
+#     elif computer_score < 21:
+#         return "Opponen went over. you win :) "
+#     elif user_score > computer_score:
+#         return "You win"
+#     else:
+#         return "You lose"
+# def play_game():
+#     user_cards = []
+#     computer_cards = []
+#     is_game_over = False
+#     for _ in range(2):
+#         user_cards.append(deal_card())
+#         computer_cards.append(deal_card() )
 
 
 
-    while not is_game_over:
+#     while not is_game_over:
 
-        user_score = calculate_score(user_cards)    
-        computer_score = calculate_score(computer_cards)
+#         user_score = calculate_score(user_cards)    
+#         computer_score = calculate_score(computer_cards)
 
-        print(f"Your card: {user_cards}, current score: {user_score} ")
-        print(f"Computer's card: {user_cards[0]} ")
+#         print(f"Your card: {user_cards}, current score: {user_score} ")
+#         print(f"Computer's card: {user_cards[0]} ")
             
-        if user_score == 0 or computer_score == 0 or user_score > 21:
-            is_game_over = True
-        else:
-            user_should_deal = input("Type 'y' to get another card, type 'n' to pass: ")
-            if user_should_deal == 'y':
-                user_cards.append(deal_card())
-            else:
-                is_game_over = True    
+#         if user_score == 0 or computer_score == 0 or user_score > 21:
+#             is_game_over = True
+#         else:
+#             user_should_deal = input("Type 'y' to get another card, type 'n' to pass: ")
+#             if user_should_deal == 'y':
+#                 user_cards.append(deal_card())
+#             else:
+#                 is_game_over = True    
 
-    while computer_score != 0 and computer_score <17:
-        computer_cards.append(deal_card())
-        computer_score = calculate_score(computer_cards)
+#     while computer_score != 0 and computer_score <17:
+#         computer_cards.append(deal_card())
+#         computer_score = calculate_score(computer_cards)
         
-    print(f" Your final hand: {user_cards}, final score: {user_score} ")
-    print(f" Computer's final hand: {computer_cards}, final score: {computer_score}")    
-    print(compare(user_score, computer_score))
+#     print(f" Your final hand: {user_cards}, final score: {user_score} ")
+#     print(f" Computer's final hand: {computer_cards}, final score: {computer_score}")    
+#     print(compare(user_score, computer_score))
     
     
-while input("Do you want to paly a game of Blackjack Type 'y' or 'n' ") == "y":
-    play_game()
+# while input("Do you want to paly a game of Blackjack Type 'y' or 'n' ") == "y":
+#     play_game() 
+
+
+
+#-------gusse the number game ------------
+
+from random import randint
+
+EASY_LEVEL_TURNS = 10
+HARD_LEVEL_TURNS = 5
+
+
+
+def check_answer(gusse, num, turns):
+    if num < gusse:
+        print("it is too high")
+        return turns -1
+    elif num > gusse:
+        print("it's to low")
+        return turns-1    
+    elif num == gusse:
+        print("you got it")
+
+
+def set_difficulty():
+    level = input("Choose a difficulty. Type 'essy' or 'hard' : ")
+    if level == "essy":
+        return  EASY_LEVEL_TURNS
+    else:
+        return HARD_LEVEL_TURNS
+
+
+def game():
+
+    print("Welcome to the Number Guessing Game ! ")
+    print("I'm thinking of a number between 1 and 100.")
+    num = randint(1, 100)
+    print(num)
+
+
+    turns = set_difficulty()
+    
+
+    gusse = 0
+    while gusse != num:
+        print(f"you have {turns} attempts remaning to guess to the number ")
+        gusse = int(input("gusse a  : "))
+
+
+        turns = check_answer(gusse, num, turns)
+        if turns == 0:
+            print("you've run out of gusses, you lose")
+            return
+        elif turns != num:
+            print("GUSSE AGAIN")
+            
+            
+            
+game()
+
+
+
