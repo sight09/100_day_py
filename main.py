@@ -1124,12 +1124,101 @@
 
 
 
-for num in range(1,100):
-    if num % 3 == 0 and num % 5 ==0 :
-        print("fizzbuzz")  
-    elif num % 3 == 0:
-        print("fizz")
-    elif num % 5 == 0:
-        print("buzz")
+#--day 13 id debuging------
+
+
+
+
+#-----------day 14 is jumped cuz of resours/by data in future--------
+
+
+
+
+
+
+MENU = {
+    "esoresso" : {
+        "ingredient" : {
+        "water" : 58,
+        'coffe': 18
+        },
+        'cost': 1.5,
+    },
+    "latte" : {
+        "indgrediant": {
+            "water" : 200,
+            "milk" : 150,
+            "coffee" : 24,
+            },
+        "cost" : 2.5
+    },
+    "capppuccino" : {
+        'indgrediant':{
+            "water" : 250,
+            'milk': 100,
+            'coffe':24,
+        },
+        "cost": 3.0
+        
+    }
+    
+}
+profit = 0
+resources = {
+    "water" : 300,
+    'milk' : 100,
+    "coffee" : 100,
+}
+
+
+def is_resoure_sufficient(order_ingredient):
+    
+    for item in order_ingredient:
+        if order_ingredient[item] >= resources[item]:
+            print(f"Sorry there is not enough {item}")
+            return False
+    return True
+
+
+def process_coins():
+    """returne the total calculated form coins inserted"""
+    
+    print("pleas insert coins")
+    total = int(input("how many quarters? ")) * 0.25
+    total += int(input("how many dimes? ")) * 0.1
+    total += int(input("how many nickels? ")) * 0.5
+    total += int(input("how many pennies? ")) * 0.1
+    return total
+
+
+def is_transaction_seccesful(mony_recevied, drink_cost):
+    
+    if mony_recevied >= drink_cost:
+        change = round(mony_recevied - drink_cost, 2)
+        print(f"here is this{change}")
+    
+    if mony_recevied >= drink_cost:
+        global profit
+        profit += drink_cost
+        return True
     else:
-        print(num)
+        print("sorrt that is not enough money. ")
+        return False
+
+
+is_on =True
+
+while is_on:
+    choice = input("what u like (capppuccino/latte/espresso) ")
+    if choice == "off":
+        is_on = False
+    elif choice == "report":
+            print(f"water : {resources['water']}ml")
+            print(f"milk :{resources['milk']}ml ")
+            print(f"coffee :{resources['coffee']}g ")
+            print(f"money : {profit}")
+    else:
+        dirnk = MENU[choice]
+        if is_resoure_sufficient(dirnk["indgrediant"]):
+            payment = process_coins()
+            is_transaction_seccesful(payment, drink['cost'])
