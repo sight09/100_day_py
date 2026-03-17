@@ -1140,7 +1140,7 @@ MENU = {
     "espresso" : {
         "ingredient" : {
         "water" : 58,
-        'coffe': 18
+        'coffee': 18
         },
         'cost': 1.5,
     },
@@ -1156,7 +1156,7 @@ MENU = {
         'ingredient':{
             "water" : 250,
             'milk': 100,
-            'coffe':24,
+            'coffee':24,
         },
         "cost": 3.0
         
@@ -1166,7 +1166,7 @@ MENU = {
 profit = 0
 resources = {
     "water" : 300,
-    'milk' : 100,
+    'milk' : 200,
     "coffee" : 100,
 }
 
@@ -1195,15 +1195,20 @@ def is_transaction_seccesful(mony_recevied, drink_cost):
     
     if mony_recevied >= drink_cost:
         change = round(mony_recevied - drink_cost, 2)
-        print(f"here is this{change}")
-    
-    if mony_recevied >= drink_cost:
+        print(f"here is the cash u inserted ${change}")
         global profit
         profit += drink_cost
         return True
     else:
         print("sorrt that is not enough money. ")
         return False
+
+
+def make_coffee(drink_name, order_ingredient):
+    for item in order_ingredient:
+        resources[item] -= order_ingredient[item]
+    print(f"here is ur {drink_name}")        
+
 
 
 is_on =True
@@ -1221,4 +1226,5 @@ while is_on:
         dirnk = MENU[choice]
         if is_resoure_sufficient(dirnk["ingredient"]):
             payment = process_coins()
-            is_transaction_seccesful(payment, dirnk["cost"])
+            if is_transaction_seccesful(payment, dirnk["cost"]):
+                make_coffee(choice, dirnk["ingredient"])
