@@ -1137,7 +1137,7 @@
 
 
 MENU = {
-    "esoresso" : {
+    "espresso" : {
         "ingredient" : {
         "water" : 58,
         'coffe': 18
@@ -1145,7 +1145,7 @@ MENU = {
         'cost': 1.5,
     },
     "latte" : {
-        "indgrediant": {
+        "ingredient": {
             "water" : 200,
             "milk" : 150,
             "coffee" : 24,
@@ -1153,7 +1153,7 @@ MENU = {
         "cost" : 2.5
     },
     "capppuccino" : {
-        'indgrediant':{
+        'ingredient':{
             "water" : 250,
             'milk': 100,
             'coffe':24,
@@ -1219,6 +1219,6 @@ while is_on:
             print(f"money : {profit}")
     else:
         dirnk = MENU[choice]
-        if is_resoure_sufficient(dirnk["indgrediant"]):
+        if is_resoure_sufficient(dirnk["ingredient"]):
             payment = process_coins()
-            is_transaction_seccesful(payment, drink['cost'])
+            is_transaction_seccesful(payment, dirnk["cost"])
