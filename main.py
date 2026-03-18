@@ -1256,12 +1256,24 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 from prettytable import PrettyTable
 table = PrettyTable()
 
-table.field_names = ["Name", "Age", "Country"]
-
-table.add_row(["Amanuel", 22, "Ethiopia"])
-table.add_row(["John", 25, "USA"])
-
+table.add_column("Pokemon Name", ["Pikachu", "Squirtle", "Charmander"])
+table.add_column("type", ["Electirc", "Water", "Fire"])
+table.align = "r"
 print(table)
