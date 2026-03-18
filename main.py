@@ -1,66 +1,8 @@
-#BMI formula
-
-# h = input ("enter  ur hight in meter")
-# w = input("enter ur wight in kg")
-
-
-# bmi = int (w)/float(h)**2
-# bmis = int (bmi)
-# print (bmis)
-
-
-#f function
-
-# sco = 0
-# hi = 3
-# win = 4
-
-# print(f"ur scoree is {sco} ur hiig id {hi} and ur win is {win}")
-
-
-
-# age reamaining calculator
-
-# age =input("what is ur current age ")
-
-# month_left =90 - int(age)
-# week_left =90 - int(age)
-# day_left =90 - int(age)
-
-
-
-# day = (day_left)*365
-# week = (week_left)*56
-# month = (month_left)*12
-
-# print(f"if u live for 90 years you left with {day} days, {week} weeks, and {month}months")
 
 
 
 
 
-
-
-
-
-
-#bill calculater
-
-# print("welcome to tip calcualater")
-
-# amount = input("enter the amount of the bill ?")
-
-# tip_perc = input("what parcentage tip u would like to give ? 10 ,12 or 15")
-# perc = input("enter the amount of person it shoul dived")
-
-# p =int( tip_perc)/100 
-
-# tip = int (amount) * p
-
-# total = int(amount) + tip
-# in_person = total/int(perc)
-
-# print(f"all should pay {in_person}")
 
 
 
@@ -76,45 +18,8 @@
 
 
 
-# h = float(input("enter ur hight in meter "))
-# w = float(input("enter ur wight in kg "))
 
 
-# bmi = w / h**2
-
-# if bmi < 18.5:
-#     print ("ur underweghit")
-
-# elif bmi > 18.5 :
-#         print ("ur normal wight")
-        
-# elif bmi > 25 :
-#         print("ur over wight")
-        
-# elif bmi > 30:
-#         print("ur obese")
-# else:
-#     print("clinically obes")                
-
-
-
-
-
-
-# leao or not
-
-# leap = int(input("enter the year u wanna to check"))
-
-# if leap % 4 == 0:
-#     if leap % 100 == 0:
-#         if  leap % 400 == 0:
-#             print("leap")
-#         else:
-#             print("not")    
-#     else:
-#         print("leap")
-# else:
-#     print("not ") 
 
 
 
@@ -1263,6 +1168,26 @@
 
 
 
+# #------crate a tabel------
+
+
+
+# from prettytable import PrettyTable
+# table = PrettyTable()
+
+# table.add_column("Pokemon Name", ["Pikachu", "Squirtle", "Charmander"])
+# table.add_column("type", ["Electirc", "Water", "Fire"])
+# table.align = "r"
+# print(table)
+
+
+
+
+
+#--------coffee machine in oop day 16----------
+#----
+#-------
+#---------
 
 
 
@@ -1270,10 +1195,7 @@
 
 
 
-from prettytable import PrettyTable
-table = PrettyTable()
-
-table.add_column("Pokemon Name", ["Pikachu", "Squirtle", "Charmander"])
-table.add_column("type", ["Electirc", "Water", "Fire"])
-table.align = "r"
-print(table)
+class User:
+    
+    
+    
