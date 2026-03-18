@@ -168,32 +168,7 @@
 
 
 
-# #------avg of heghit in loop------------ 
 
-# student_heghit = input("enter the list of the student heghit ").split()
-# a = 0
-# for n in range(0, len (student_heghit)):
-#     student_heghit[n] = int (student_heghit[n])
-# print(student_heghit)
-# for m in student_heghit:
-#     a += m
-# print(a/len(student_heghit))
-
-
-
-
-# #----------highest score-------------- 
-
-# score = input("input the list of the student ").split()
-
-# for n in range(0, len(score)):
-#     score[n] = int(score[n])
-# print(score)
-# highest_score = 0
-# for n in score:
-#     if n > highest_score:
-#         highest_score = n
-# print(f"the highest score is  {highest_score}")
 
 
 
