@@ -31,7 +31,7 @@ print (bmis)
           
   elif bmi > 30:
     print("ur obese")
-  # else:
+  else:
     print("clinically obes")                
 
 

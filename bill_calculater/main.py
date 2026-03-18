@@ -16,3 +16,19 @@ in_person = total/int(perc)
 
 print(f"all should pay {in_person}")
 
+
+
+
+
+
+#random bill payer
+
+import random
+name_string = input("Give me everybody's name, saparated by a comma and space ")
+
+names = name_string.split(",")
+
+
+random_name = random.choice(names)
+
+print(f"today's bill is going to {random_name} 🫣")
