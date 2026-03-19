@@ -1,31 +1,3 @@
-
-
-
-
-
-
-
-
-
-# odd or even
-
-# number = int(input("what number do u weant to check ?"))
-
-# if number % 2==0:
-#     print("it is even")
-# else:
-#     print("it is odd")    
-
-
-
-
-
-
-
-
-
-
-
 # print ("welcome to python pizza delivary")
 
 # size = input("what size pizza do u wanna S, L or M ")
@@ -70,7 +42,7 @@
 
 
 
-# bill but left with the chess code is not working
+# # bill but left with the chess code is not working
 
 # bill =0
 
@@ -98,6 +70,11 @@
 
 
 # print (f"ur final bill is {bill}")
+
+
+
+
+
 
 
 
