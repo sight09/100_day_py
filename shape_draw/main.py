@@ -4,7 +4,8 @@ import random
 
 
 tin = t.Turtle()
-color = ["red", "green", "blue", "black", "yellow", "purpule"]
+color = ["red", "green", "blue", "black", "yellow", "wheat", "SeaGreen", "purple", "DarkBlue", "DarkRed", "DarkGreen", "DarkMagenta"]
+
 
 def draw_shape(num_sides):
     angle = 360/num_sides
